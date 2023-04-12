@@ -21,5 +21,5 @@ from dolar import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('dolar', views.dolar, name='dolar'),
+    path('dolar/', views.dolar, name='dolar'),
 ]

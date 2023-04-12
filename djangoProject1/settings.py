@@ -27,6 +27,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['10.50.100.171']
 
+CORS_ORIGIN_WHITELIST = ['http://localhost:4200']
+
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dolar.apps.DolarConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,9 +51,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoProject1.urls'
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_METHODS = ['GET']
 
 TEMPLATES = [
     {
